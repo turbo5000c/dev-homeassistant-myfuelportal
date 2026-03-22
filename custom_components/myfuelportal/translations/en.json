@@ -1,0 +1,29 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to MyFuelPortal",
+        "description": "Enter your MyFuelPortal account credentials",
+        "data": {
+          "email": "Email",
+          "password": "Password",
+          "fuel_vendor": "Fuel Vendor"
+        },
+        "data_description": {
+          "email": "Your MyFuelPortal account email address",
+          "password": "Your MyFuelPortal account password",
+          "fuel_vendor": "Your fuel vendor subdomain (e.g., 'kbjohnson' from https://kbjohnson.myfuelportal.com)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to MyFuelPortal. Please check your internet connection and try again.",
+      "invalid_auth": "Invalid email or password. Please check your credentials.",
+      "invalid_vendor": "Invalid fuel vendor. Must start and end with a letter or number and may contain hyphens only in the middle (e.g., 'kbjohnson').",
+      "unknown": "An unexpected error occurred. Please check the logs for more details."
+    },
+    "abort": {
+      "already_configured": "This MyFuelPortal account is already configured."
+    }
+  }
+}
