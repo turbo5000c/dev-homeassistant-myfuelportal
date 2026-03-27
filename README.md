@@ -12,7 +12,7 @@ A Home Assistant custom integration for monitoring propane/fuel tank levels from
 - ⛽ **Gallons Remaining**: Current gallons in your propane tank
 - 🛢️ **Fuel Type**: Type of fuel in the tank (e.g., Propane)
 - 💰 **Current Price**: Current fuel price per gallon
-- 🔄 **Automatic Updates**: Updates every 5 minutes
+- 🔄 **Automatic Updates**: Updates every 8 hours
 - 🛡️ **Error Handling**: Robust error handling with automatic re-authentication
 
 ## Installation
@@ -58,44 +58,44 @@ The fuel vendor is the subdomain in your MyFuelPortal URL. To find it:
 
 The integration creates seven sensors for your tank:
 
-### Tank Level
-- **Entity ID**: `sensor.myfuelportal_tank_level`
+### Fuel Tank Level
+- **Entity ID**: `sensor.fuel_tank_level`
 - **Unit**: Percentage (%)
 - **Icon**: 🛢️ mdi:propane-tank
 - **Description**: Current fuel level as a percentage (0-100%)
 
-### Gallons Remaining
-- **Entity ID**: `sensor.myfuelportal_gallons_remaining`
+### Fuel Gallons Remaining
+- **Entity ID**: `sensor.fuel_gallons_remaining`
 - **Unit**: Gallons (gal)
 - **Icon**: ⛽ mdi:gauge
 - **Description**: Approximate gallons remaining in tank
 
-### Tank Capacity
-- **Entity ID**: `sensor.myfuelportal_tank_capacity`
+### Fuel Tank Capacity
+- **Entity ID**: `sensor.fuel_tank_capacity`
 - **Unit**: Gallons (gal)
 - **Icon**: 🛢️ mdi:propane-tank
 - **Description**: Total capacity of the propane tank
 
 ### Fuel Type
-- **Entity ID**: `sensor.myfuelportal_fuel_type`
+- **Entity ID**: `sensor.fuel_type`
 - **Unit**: None (string)
 - **Icon**: ⛽ mdi:fuel
 - **Description**: Type of fuel in the tank (e.g., PROPANE)
 
-### Last Delivery Date
-- **Entity ID**: `sensor.myfuelportal_last_delivery_date`
+### Fuel Last Delivery Date
+- **Entity ID**: `sensor.fuel_last_delivery_date`
 - **Unit**: None (date string)
 - **Icon**: 📅 mdi:calendar-clock
 - **Description**: Date of the last propane delivery
 
-### Reading Date
-- **Entity ID**: `sensor.myfuelportal_reading_date`
+### Fuel Reading Date
+- **Entity ID**: `sensor.fuel_reading_date`
 - **Unit**: None (date string)
 - **Icon**: ✅ mdi:calendar-check
 - **Description**: Date of the tank level reading
 
-### Current Price
-- **Entity ID**: `sensor.myfuelportal_current_price`
+### Fuel Current Price
+- **Entity ID**: `sensor.fuel_current_price`
 - **Unit**: $/gal
 - **Icon**: 💰 mdi:currency-usd
 - **Description**: Current fuel price per gallon
@@ -119,7 +119,7 @@ The integration creates seven sensors for your tank:
 - Uses BeautifulSoup for HTML parsing
 
 ### Update Frequency
-- **Default**: Every 5 minutes (300 seconds)
+- **Default**: Every 8 hours (28800 seconds)
 - Helps avoid excessive requests to the portal
 
 ## Requirements
@@ -147,7 +147,7 @@ The integration creates seven sensors for your tank:
 ## Future Enhancements
 
 - [ ] Support for multiple tanks
-- [ ] Additional sensors (price, delivery dates)
+- [x] Additional sensors (price, delivery dates)
 - [ ] Service for manual refresh
 
 ## Contributing
